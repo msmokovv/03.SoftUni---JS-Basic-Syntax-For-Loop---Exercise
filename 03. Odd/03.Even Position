@@ -1,0 +1,61 @@
+function solve(input){
+let n = Number(input.shift());
+let oddMax = -99999999999;
+let oddMin = +99999999999;
+let oddSum = 0;
+
+let evenSum = 0;
+let evenMax = -99999999999;
+let evenMin = +99999999999;
+
+for(var j = 1;j <= n;j++){
+  let num = Number(input.shift());
+  if(j % 2 == 0){
+    evenSum += num;
+    if(evenMax < num){
+      evenMax = num
+    }
+    if(num < evenMin){
+      evenMin = num
+    }
+  }
+  else{
+    oddSum += num;
+    if(oddMax < num){
+      oddMax = num
+    }
+    if(num < oddMin){
+      oddMin = num
+    }
+  }
+}
+  console.log(`OddSum=${oddSum.toFixed(2)}` + ",");
+  if(oddMin != +99999999999){
+    console.log(`OddMin=${oddMin.toFixed(2)}` + ",")
+  }
+  else{
+    console.log(`OddMin=No,`)
+  }
+
+  if(oddMax != -99999999999){
+    console.log(`OddMax=${oddMax.toFixed(2)}` + ",")
+  }
+  else{
+    console.log(`OddMax=No,`)
+  }
+  console.log(`EvenSum=${evenSum.toFixed(2)}` + ",")
+    if(evenMin != +99999999999){
+      console.log(`EvenMin=${evenMin.toFixed(2)}` + ",")
+    }
+    else{
+      console.log(`EvenMin=No,`)
+    }
+  
+    if(evenMax != -99999999999){
+      console.log(`EvenMax=${evenMax.toFixed(2)}`)
+    }
+    else{
+      console.log(`EvenMax=No`)
+    }
+}
+solve([6,2,3,5,4,2,1]);
